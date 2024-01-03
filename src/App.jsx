@@ -9,23 +9,34 @@ function App() {
   const [fact, setFact] = useState();
   const [image, setImage] = useState();
 
+
+  console.log(fact);
+
   useEffect(() => {
     fetch(CAT_ENDPOINT_RANDOM_CAT)
       .then((res) => res.json())
       .then((data) => {
         const { fact } = data;
         setFact(fact);
-
-        //maneras de recuerar la primera palabra
-        const threeFirstWords = fact.split(" ", 3).join(" ");
-        console.log(threeFirstWords);
-        // const firstWord = fact.split(" ").slice(0, 3).join(" ");
-
-        const imageUrl = `https://cataas.com/cat/says/${threeFirstWords}?fontSize=50&fontColor=teal`;
-
-        setImage(imageUrl);
+        console.log(fact);
       });
   }, []);
+
+  useEffect(() => {
+    if (!fact) return
+
+    //maneras de recuerar la primera palabra
+    const threeFirstWords = fact.split(" ", 3).join(" ");
+    console.log(threeFirstWords);
+    // const firstWord = fact.split(" ").slice(0, 3).join(" ");
+
+    const imageUrl = `https://cataas.com/cat/says/${threeFirstWords}?fontSize=50&fontColor=teal`;
+
+    setImage(imageUrl);
+
+
+
+  }, [fact]);
 
   return (
     <main>
