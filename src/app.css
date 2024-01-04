@@ -11,6 +11,7 @@ main {
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
+  border-radius: 55px;
 }
 
 h1 {
@@ -32,4 +33,24 @@ img {
   height: auto;
   border-radius: 32px;
   margin-bottom: 32px;
+}
+
+.btn {
+  border: none;
+  color: black;
+  font-family: "Rubik Doodle Shadow";
+  margin-bottom: 15px;
+  padding: 14px 28px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 5px;
+}
+
+.primary {
+  background-color: bisque;
+  border: 2px solid teal;
+}
+.primary:hover {
+  background: teal;
+  color: bisque;
 }
